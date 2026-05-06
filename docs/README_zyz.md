@@ -100,6 +100,13 @@ export PATH=$JAVA_HOME/bin:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_S
 - **构建核心库 AAR（可选）**
   - `./gradlew :dkplayer-java:assembleRelease`
 
+**例如（我的编译指令）：**
+
+我的工程目录是：`/home/zyz/code/DKVideoPlayer_RK`
+（以下命令均为一整行）
+- 编译Debug包：`cd /home/zyz/code/DKVideoPlayer_RK && export JAVA_HOME=/home/zyz/code/DKVideoPlayer_RK/.tools/jdk-11 && export  ANDROID_SDK_ROOT=/home/zyz/code/DKVideoPlayer_RK/.tools/android-sdk && export PATH=$JAVA_HOME/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH && ./gradlew :dkplayer-sample:assembleDebug --no-daemon --console=plain`
+
+- 编译Release包：`cd /home/zyz/code/DKVideoPlayer_RK && export JAVA_HOME=/home/zyz/code/DKVideoPlayer_RK/.tools/jdk-11 && export  ANDROID_SDK_ROOT=/home/zyz/code/DKVideoPlayer_RK/.tools/android-sdk && export PATH=$JAVA_HOME/bin:$ANDROID_SDK_ROOT/platform-tools:$PATH && ./gradlew :dkplayer-sample:assembleRelease --no-daemon --console=plain`
 ---
 
 ### 6. 本次验证结果
@@ -138,7 +145,7 @@ export PATH=$JAVA_HOME/bin:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_S
 
 ---
 
-### 9. 你后续建议的开发入口
+### 9. 开发入口
 
 - 本地视频播放主流程：`dkplayer-sample/src/main/java/xyz/doikki/dkplayer/MainActivity.java`
 - 播放内核与 `VideoView` 行为：`dkplayer-java`
@@ -157,7 +164,5 @@ export PATH=$JAVA_HOME/bin:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$ANDROID_S
 
 ### 11. 局域网控制 API 文档
 
-已新增详细接口文档，供客户二次开发网页控制使用：
-
 - `LAN_CONTROL_API.md`
-- 覆盖内容：所有控制按钮对应接口、全部状态接口、请求/响应示例、错误码、跨域说明、兼容旧接口说明。
+- 所有控制按钮对应接口、全部状态接口、请求/响应示例、错误码、跨域说明、兼容旧接口说明。
